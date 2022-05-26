@@ -6,11 +6,28 @@ export class User {
   id: number;
 
   @Column()
-  firstName: string;
+  FullName: string;
 
   @Column()
-  lastName: string;
+  from: string;
 
-  @Column({ default: true })
-  isActive: boolean;
+  @Column()
+  to: string;
+
+  @Column('date', { nullable: true })
+  departure: Date;
+
+  @Column('date', { nullable: true })
+  arrival: Date;
+
+  @Column()
+  Adults: number;
+
+  @Column()
+  children: number;
+
+  @Column()
+  infants: number;
+
+  
 }

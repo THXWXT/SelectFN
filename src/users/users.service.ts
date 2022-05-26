@@ -20,13 +20,24 @@ export class UsersService {
     return this.usersRepository.find();
   }
 
+  
+
+  findWithTime(departure: Date): Promise<User[]> {
+    return this.usersRepository.find(
+      {
+      where: 
+        {departure:departure}
+      }
+    )
+  }
+
   findOne(id: string): Promise<User> {
     return this.usersRepository.findOne(id);
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
     return this.usersRepository.update(id, updateUserDto)
-    return `This action updates a #${id} user`;
+    
   }
 
   async remove(id: string): Promise<void> {

@@ -27,6 +27,11 @@ export class UsersController {
     return this.usersService.update(+id, updateUserDto);
   }
 
+  @Get('/departure/:departure')
+  findWithTime(@Param('departure') departure:Date){
+    return this.usersService.findWithTime(departure)
+  }
+
   @Delete(':id')
   remove(@Param('id') id: string) {
     return this.usersService.remove(id);
